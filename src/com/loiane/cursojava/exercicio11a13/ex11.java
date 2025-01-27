@@ -1,4 +1,4 @@
-package br.com.loine.groner;
+package com.loiane.cursojava.exercicio11a13;
 
 import java.util.Scanner;
 
