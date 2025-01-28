@@ -1,34 +1,35 @@
 package com.loiane.cursojava.exercicio14e15;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ex09 {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int numberOne;
-        int numberTwo;
-        int numberThree;
+        // Variáveis para armazenar os números
+        int[] numeros = new int[3];
 
-        /*
-         1 2 3
-         1 3 2
-         2 3 1
-         2 1 3
-         3 1 2
-         3 2 1
+        // Entrada dos números
+        System.out.println("Digite o primeiro número:");
+        numeros[0] = scanner.nextInt();
 
-         */
+        System.out.println("Digite o segundo número:");
+        numeros[1] = scanner.nextInt();
 
-        System.out.println("Número um: ");
-        numberOne = scan.nextInt();
+        System.out.println("Digite o terceiro número:");
+        numeros[2] = scanner.nextInt();
 
-        System.out.println("Número dois: ");
-        numberTwo = scan.nextInt();
+        // Ordenar os números em ordem decrescente
+        Arrays.sort(numeros);
 
-        System.out.println("Número três: ");
-        numberThree = scan.nextInt();
+        // Imprimir os números em ordem decrescente
+        System.out.println("Números em ordem decrescente:");
+        for (int i = 2; i >= 0; i--) {
+            System.out.print(numeros[i] + " ");
+        }
 
+        scanner.close();
 
     }
 }
