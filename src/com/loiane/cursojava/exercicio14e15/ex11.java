@@ -6,24 +6,34 @@ public class ex11 {
     public static void main(String[] args) {
 
         double salarioColaborador;
-        double reajuste;
+        double salarioComReajuste = 0;
+        double reajuste = 0;
+        String percentual;
 
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Digite o valor do Salário: R$ ");
         salarioColaborador = scan.nextDouble();
-        reajuste = 0;
+
         if (salarioColaborador < 2800) {
-            reajuste = salarioColaborador * 1.2;
+            salarioComReajuste = salarioColaborador * 1.2;
+            percentual = "20%";
         } else if(salarioColaborador >= 2800 && salarioColaborador < 7000) {
-            reajuste = salarioColaborador * 1.15;
+            salarioComReajuste = salarioColaborador * 1.15;
+            percentual = "15%";
         } else if (salarioColaborador >= 7000 && salarioColaborador < 15000) {
-            reajuste = salarioColaborador * 1.10;
+            salarioComReajuste = salarioColaborador * 1.10;
+            percentual = "10%";
         } else {
-            reajuste = salarioColaborador * 1.05;
+            salarioComReajuste = salarioColaborador * 1.05;
+            percentual = "5%";
         }
 
-        System.out.println("Salário antigo: R$ " + salarioColaborador +
-                " Salário após reajuste: R$ " + reajuste);
+        reajuste = salarioComReajuste - salarioColaborador;
+
+        System.out.println("Salário antigo: R$ " + salarioColaborador);
+        System.out.println("Salário após reajuste: R$ " + salarioComReajuste);
+        System.out.println("Reajuste: R$ " + reajuste);
+        System.out.println("Percentual: " + percentual);
     }
 }
